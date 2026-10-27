@@ -17,7 +17,7 @@ ium-sales-skill/
 │   ├── cross-domain-integration.md         # Anti-Corruption Layer (ACL) for WMS, TMS, FMS, and CRM
 │   └── testing-and-verification.md         # PestPHP testing guide, assertions, and mocks
 └── scripts/
-    └── run-tests.ps1                       # Helper script to execute module test suite
+    └── run-tests.sh                        # Bash helper script to execute module test suite
 ```
 
 ---
