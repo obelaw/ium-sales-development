@@ -1,6 +1,6 @@
 # Obelawium Sales & Order Management System (`ium-sales`) Development Skill
 
-This skill provides comprehensive instructions, architectural guidelines, domain invariants, API recipes, and integration patterns for developing with, integrating against, and extending the **Obelawium Sales & Order Management System (`ium-sales`)** domain module.
+This skill provides comprehensive instructions, architectural guidelines, domain invariants, API recipes, and integration patterns for developing with, integrating against, and extending the **Obelawium Sales & Order Management System** ([`obelaw/ium-sales`](https://github.com/obelaw/ium-sales)) domain module.
 
 ---
 

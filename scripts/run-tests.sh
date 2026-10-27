@@ -1,17 +1,31 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Run PestPHP test suite for ium-sales
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-MODULE_DIR="$(cd "${SCRIPT_DIR}/../../ium-sales" && pwd)"
+# Obelawium Sales & Order Management System (Sales / OMS)
+# Repository: https://github.com/obelaw/ium-sales
 
-echo "Running PestPHP test suite in: ${MODULE_DIR}"
+REPO_URL="https://github.com/obelaw/ium-sales"
+TARGET_DIR="${1:-.}"
 
-cd "${MODULE_DIR}"
+echo "=========================================================="
+echo " Running PestPHP Test Suite"
+echo " Repository: ${REPO_URL}"
+echo " Directory:  ${TARGET_DIR}"
+echo "=========================================================="
 
-if [ ! -f "vendor/bin/pest" ]; then
-    echo "vendor/bin/pest not found. Running composer dump-autoload..."
-    composer dump-autoload
+cd "${TARGET_DIR}"
+
+if [ ! -f "composer.json" ]; then
+    echo "Error: composer.json not found in ${TARGET_DIR}."
+    echo "Please run this script inside the repository: ${REPO_URL}"
+    exit 1
 fi
 
-./vendor/bin/pest "$@"
+if command -v cmd.exe &> /dev/null && [ -f "vendor/bin/pest.bat" ]; then
+    cmd.exe /c "vendor\\bin\\pest.bat" "${@:2}"
+elif [ -f "vendor/bin/pest" ]; then
+    ./vendor/bin/pest "${@:2}"
+else
+    composer dump-autoload
+    ./vendor/bin/pest "${@:2}"
+fi

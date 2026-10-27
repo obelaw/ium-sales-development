@@ -6,17 +6,17 @@ This guide details the test structure, Orchestra Testbench setup, PestPHP assert
 
 ## 1. Running Tests
 
-Execute PestPHP from the root of `ium-sales`:
+Execute PestPHP from the root of [`obelaw/ium-sales`](https://github.com/obelaw/ium-sales):
 
 ```bash
 # Run the entire test suite
-.\vendor\bin\pest
+./vendor/bin/pest
 
 # Run a specific feature test
-.\vendor\bin\pest tests/Feature/PriceLockInvariantTest.php
+./vendor/bin/pest tests/Feature/PriceLockInvariantTest.php
 
 # Run with verbose output
-.\vendor\bin\pest -v
+./vendor/bin/pest -v
 ```
 
 ---
